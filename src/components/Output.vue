@@ -5,13 +5,16 @@
 // The data and subsequent page update should be based on updating the DOM (not via a page reload or form submission)
 
 <template>
+<!-- used a card component from bootstrap to start with -->
     <div class="card" style="width: 18rem;">
     <img :src="imgsrc" class="card-img-top" alt="Image Unavailable">
       <!-- keep content below here -->
   <div class="card-body">
     <h5 class="card-title">Live Weather for {{obj.name}}</h5>
     <p class="card-text"> 
+      <!-- vue-bootstrap list elements they look nice -->
       <b-list-group>
+        <!-- various weather conditions in this list group -->
         <b-list-group-item>Weather Conditions: {{obj.weather[0].main}}</b-list-group-item>
         <b-list-group-item>Current Temperature is: {{obj.main.temp}}</b-list-group-item>
         <b-list-group-item>The high for the day is: {{obj.main.temp_max}}</b-list-group-item>
@@ -32,7 +35,10 @@
 export default{
   name: 'Output',
   props: {
+    //recieves this from axios calls in App.vue
+    // obj is the bulk of the JSON Data so I can drill down where I need to and use fewer v-binds
     obj: Object,
+    //made an exception for the image source because it requires an additional link
     imgsrc: Object
   },
 }

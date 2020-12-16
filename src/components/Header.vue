@@ -1,4 +1,5 @@
 <template>
+<!-- simple header for decoration -->
     <header class="p-3 mb-2 bg-dark text-white">
         <h1>{{text}}</h1>
     </header>
@@ -7,6 +8,7 @@
 <script>
 export default {
     name: 'Header',
+    // this props title is set in the App.vue data section
     props: {
         text: String
     }
